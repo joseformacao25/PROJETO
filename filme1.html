@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>One Battle After Another</title>
+
+    <!-- LIGAÇÃO AO CSS -->
+    <link rel="stylesheet" href="css/filme1.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">MyMDB</div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Pesquisar filmes...">
+    </div>
+
+    <div class="profile">
+        <div class="icon">👤</div>
+        <div class="text">Conta</div>
+    </div>
+</header>
+
+<!-- CONTEÚDO DO FILME -->
+<div class="movie-container">
+
+    <div class="poster">
+        <img src="images/battle.jpg" alt="Filme">
+    </div>
+
+    <div class="info">
+        <h1 class="title">One Battle After Another</h1>
+
+        <div class="meta">
+            2024 • Ação • Drama • 2h 10min
+        </div>
+
+        <div class="rating">
+            <span class="star">★</span> 7.8 / 10
+        </div>
+
+        <p class="description">
+            One Battle After Another acompanha um ex-revolucionário que é forçado a regressar ao mundo do conflito quando um antigo inimigo reaparece e ameaça a sua filha, desencadeando uma perigosa missão de resgate marcada por ação, tensão política e laços familiares. A história mistura humor negro com thriller, explorando temas de resistência, legado e sobrevivência. O filme foi amplamente aclamado pela crítica e destacou-se na temporada de prémios, vencendo vários Óscares, incluindo Melhor Filme e Melhor Realização.
+        </p>
+        <br>
+
+        <button class="btn-trailer" onclick="abrirTrailer()">
+    ▶ Ver Trailer
+</button>
+</a>
+    </div>
+
+</div>
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharTrailer()">&times;</span>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hg8AGTyYMBA?si=DstnRGM7Of209MdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
+<script>
+function abrirTrailer() {
+    document.getElementById("trailerModal").style.display = "block";
+
+//     document.getElementById("trailerVideo").src =
+//         "https://www.youtube.com/embed/hg8AGTyYMBA?si=DstnRGM7Of209MdY";
+}
+
+function fecharTrailer() {
+    document.getElementById("trailerModal").style.display = "none";
+
+    // document.getElementById("trailerVideo").src = "";
+}
+</script>
+</body>
+</html>

@@ -39,23 +39,21 @@ header {
     outline: none;
 }
 
+/* PERFIL */
 .profile {
     display: flex;
-    flex-direction: column; /* força o texto para baixo */
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
     color: #cccccc;
 }
 
 .profile .icon {
     font-size: 22px;
-    line-height: 1;
 }
 
 .profile .text {
-    font-size: 11px; /* letra pequena */
-    margin-top: 2px;
+    font-size: 11px;
 }
 
 .profile:hover {
@@ -70,8 +68,8 @@ nav {
 
 nav ul {
     list-style: none;
-    justify-content: center;
     display: flex;
+    justify-content: center;
     gap: 40px;
 }
 
@@ -85,11 +83,12 @@ nav ul li:hover {
     text-decoration: underline;
 }
 
-/* CONTEÚDO */
+/* MAIN */
 main {
     padding: 30px;
 }
 
+/* TÍTULOS */
 .section-title {
     color: #ffffff;
 }
@@ -98,6 +97,7 @@ main {
     color: #f5c518;
 }
 
+/* CARDS */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -107,13 +107,12 @@ main {
 .card {
     background-color: #1e1e1e;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     padding: 10px;
     border-radius: 6px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* importante para z-index */
+    position: relative;
 }
 
 .card img {
@@ -126,61 +125,65 @@ main {
     font-size: 14px;
 }
 
-
-.highlight-title {
-    color: #f5c518;
+/* HOVER CARD */
+.card:hover {
+    transform: scale(1.08);
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5),
+                0 0 0 2px #f5c518;
 }
 
+/* LINK DO CARD */
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* BOTÃO TRAILER */
 .btn-trailer {
-  background: none;
-  border: 1px solid #ccc;
-  color: #ccc;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: 0.3s;
-  width: 100%;
+    background: none;
+    border: 1px solid #ccc;
+    color: #ccc;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: 0.3s;
+    width: 100%;
 }
 
 .btn-trailer:hover {
-  border-color: white;
-  color: white;
+    border-color: white;
+    color: white;
 }
 
+/* RATING */
 .rating {
-  
-  font-family: 'Segoe UI', sans-serif;
-  padding-right: 5%;
+    margin-top: 5px;
 }
 
 .star {
-  color: #f5c518;
-  font-size: 14px;
+    color: #f5c518;
 }
 
 .score {
-  font-size: 14px;
-  font-weight: 500;
-  color: white;
+    font-size: 14px;
 }
 
+/* DROPDOWN */
 .menu {
     list-style: none;
     display: flex;
     gap: 20px;
     padding: 10px 40px;
-    margin: 0;
 }
 
 .menu li {
     position: relative;
 }
 
-/* SUBMENU */
 .submenu {
     position: absolute;
     top: 100%;
@@ -190,8 +193,6 @@ main {
     padding: 10px 0;
     min-width: 180px;
     display: none;
-    z-index: 10;
-    font: white;
 }
 
 .submenu li {
@@ -202,29 +203,76 @@ main {
     background-color: #333;
 }
 
-/* MOSTRAR SUBMENU */
 .dropdown:hover .submenu {
     display: block;
 }
 
-.card-link {
-  display: block;       /* 🔥 resolve o espaço estranho */
-  text-decoration: none;
-  color: inherit;
+/* ========================= */
+/* 🎬 PÁGINA DO FILME */
+/* ========================= */
+
+.movie-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
 }
 
-.card:hover {
-    transform: scale(1.08); /* aumenta ligeiramente */
-    z-index: 10; /* traz para a frente */
-    box-shadow: 0 0 0 2px #141413; /* borda tipo destaque */
+.poster img {
+    width: 250px;
+    border-radius: 8px;
 }
 
-.submenu a {
-    text-decoration: none;   /* remove sublinhado */
-    color: white;            /* ou usa inherit */
-    display: block;
+.info {
+    max-width: 700px;
 }
 
-.submenu a:hover {
-    color: #f5c518;          /* amarelo tipo IMDb */
+.title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.meta {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.description {
+    margin-top: 15px;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 600px;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* CONTEÚDO */
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 5% auto;
+}
+
+/* VIDEO */
+.modal-content iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+}
+
+/* BOTÃO FECHAR */
+.close {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
 }
